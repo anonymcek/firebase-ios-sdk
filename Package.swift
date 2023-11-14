@@ -800,7 +800,6 @@ let package = Package(
         .headerSearchPath("../../../"),
       ],
       linkerSettings: [
-        .linkedFramework("GoogleUtilities-UserDefaults"),
         .linkedFramework("GoogleUtilities-Environment"),
         .linkedFramework("FBLPromises"),
         .linkedFramework("Security"),
