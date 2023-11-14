@@ -206,6 +206,7 @@ let package = Package(
         // TODO: - Add support for cflags cSetting so that we can set the -fno-autolink option
       ],
       linkerSettings: [
+        .linkedFramework("GoogleUtilities_Logger"),
         .linkedFramework("UIKit", .when(platforms: [.iOS, .macCatalyst, .tvOS])),
         .linkedFramework("AppKit", .when(platforms: [.macOS])),
       ]
@@ -798,6 +799,9 @@ let package = Package(
         .headerSearchPath("../../../"),
       ],
       linkerSettings: [
+        .linkedFramework("GoogleUtilities_UserDefaults"),
+        .linkedFramework("GoogleUtilities_Environment"),
+        .linkedFramework("FBLPromises"),
         .linkedFramework("Security"),
       ]
     ),
@@ -846,6 +850,8 @@ let package = Package(
         .define("PB_ENABLE_MALLOC", to: "1"),
       ],
       linkerSettings: [
+        .linkedFramework("nanopb"),
+        .linkedFramework("GoogleDataTransport"),
         .linkedFramework("SystemConfiguration", .when(platforms: [.iOS, .macOS, .tvOS])),
       ]
     ),
