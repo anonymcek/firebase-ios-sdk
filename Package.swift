@@ -324,7 +324,10 @@ let package = Package(
     .target(
       name: "FirebaseAnalyticsSwift",
       dependencies: ["FirebaseAnalyticsWrapper"],
-      path: "FirebaseAnalyticsSwift/Sources"
+      path: "FirebaseAnalyticsSwift/Sources",
+      linkerSettings: [
+        .linkedLibrary("FirebaseCore")
+      ]
     ),
     .testTarget(
       name: "AnalyticsSwiftUnit",
